@@ -1,2 +1,3 @@
-# Duoc-FullStack2-Exp1_S1
+### Duoc-FullStack2
+
 Catalogo de juegos de mesa
