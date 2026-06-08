@@ -186,27 +186,29 @@ function renderizarTodoElInventario() {
             const mostrarBotonComprar = !sinStock && !esAdmin;
 
             return `
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <article class="tarjeta">
-                                <img src="${juego.img}" alt="${juego.nombre}">
-                                <div class="tarjeta-contenido">
-                                    <h3>${juego.nombre}</h3>
-                                    <p class="descripcion">${juego.desc}</p>
-                                    <div class="precio-contenedor">
-                                        <p class="precio">${juego.precio}</p>
-                                        <p class="small fw-bold ${ultimaUnidad ? 'text-warning' : 'text-danger'}">
-                                        ${sinStock ? 'Sin stock' : (ultimaUnidad ? '¡Última unidad!' : `Stock: ${juego.stock}`)}
-                                    </p>
-                                    ${mostrarBotonComprar ?
-                                        `<button class="btn btn-outline-success btn-sm" onclick="agregarAlCarrito(${juego.id})">Comprar</button>` :
-                                        ''}
-                                        <p class="${juego.tieneDescuento ? 'descuento' : 'sin-descuento'}">
-                                            ${juego.textoDescuento}
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>`;
+    <div class="col-12 col-md-6 col-lg-4">
+        <article class="tarjeta">
+            <img src="${juego.img}" alt="${juego.nombre}">
+            <div class="tarjeta-contenido">
+                <h3>${juego.nombre}</h3>
+                <p class="descripcion">${juego.desc}</p>
+                <div class="precio-contenedor">
+                    <p class="precio">${juego.precio}</p>
+                    <p class="small fw-bold ${ultimaUnidad ? 'text-warning' : 'text-danger'}">
+                        ${sinStock ? 'Sin stock' : (ultimaUnidad ? '¡Última unidad!' : `Stock: ${juego.stock}`)}
+                    </p>
+                    
+                    ${mostrarBotonComprar ?
+                    `<button class="btn btn-outline-success btn-sm" onclick="agregarAlCarrito(${juego.id})">Comprar</button>` :
+                    ''}
+
+                    <p class="${juego.tieneDescuento ? 'descuento' : 'sin-descuento'}">
+                        ${juego.textoDescuento}
+                    </p>
+                </div>
+            </div>
+        </article>
+    </div>`;
         }).join('')}
                 </div>
             </div>
@@ -218,18 +220,23 @@ function renderizarTodoElInventario() {
 // Agregar productos al carrito de compras y reducir stock
 function agregarAlCarrito(idJuego) {
     let juegos = JSON.parse(localStorage.getItem('juegos')) || [];
-    const juego = juegos.find(j => j.id === idJuego);
+    // Convierto el idJuego a numero para asegurar comparacion estricta
+    const idBuscado = parseInt(idJuego);
+    const juego = juegos.find(j => parseInt(j.id) === idBuscado);
 
     if (juego && juego.stock > 0) {
         juego.stock--;
         localStorage.setItem('juegos', JSON.stringify(juegos));
 
         let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-        carrito.push(juego);
+        // Clono el objeto para evitar referencias compartidas
+        carrito.push({ ...juego });
         localStorage.setItem('carrito', JSON.stringify(carrito));
 
         renderizarTodoElInventario();
         alert("Agregado al carrito: " + juego.nombre);
+    } else if (juego && juego.stock <= 0) {
+        alert("Lo sentimos, no hay stock disponible.");
     }
 }
 

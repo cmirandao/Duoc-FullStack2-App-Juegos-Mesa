@@ -158,18 +158,21 @@ document.getElementById('formPerfil').addEventListener('submit', function (e) {
         const nuevaDireccion = document.getElementById('perfilDireccion').value;
         const nuevaPassword = document.getElementById('perfilPassword').value;
 
+        // Obtener usuario actualizado desde LocalStorage justo antes de usarlo
+        const sesionActual = JSON.parse(localStorage.getItem('usuarioSesion'));
+
         const usuarioActualizado = {
-            ...JSON.parse(localStorage.getItem('usuarioSesion')),
+            ...sesionActual,
             nombre: document.getElementById('perfilNombre').value,
             email: document.getElementById('perfilEmail').value,
             fechaNacimiento: document.getElementById('perfilFecha').value,
             direccion: nuevaDireccion,
             // Solo se actualiza password si el usuario ingresa una nueva
-            password: nuevaPassword !== '' ? nuevaPassword : usuarioSesion.password
+            password: nuevaPassword !== '' ? nuevaPassword : sesionActual.password
         };
         // Actualizar la sesion actual
         localStorage.setItem('usuarioSesion', JSON.stringify(usuarioActualizado));
-        
+
         // Actualizar el array general de usuarios
         let usuariosRegistrados = JSON.parse(localStorage.getItem('usuariosRegistrados')) || [];
         const index = usuariosRegistrados.findIndex(u => u.username === usuarioActualizado.username);
