@@ -1,0 +1,10 @@
+/* 
+* ESTILOS DEL PANEL DE ADMINISTRACION
+* Este archivo gestiona exclusivamente la apariencia de las secciones del Dashboard administrativo.
+*/
+
+ /* Tarjetas de estadistica */
+.tarjeta-stat {
+    border-left: 5px solid var(--color-secundario);
+    color: var(--color-suave);
+}

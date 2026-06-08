@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <!-- Iconos y fuentes -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
@@ -19,59 +19,67 @@
 </head>
 
 <body>
+    <!-- Encabezado principal del sitio -->
     <header class="encabezado" id="inicio">
         <div class="contenedor encabezado-contenido">
             <h1>SEV Toys</h1>
             <p>Descubre un mundo mágico y divertido. Especialistas en Juegos de Mesa</p>
         </div>
     </header>
+    <!-- Barra de navegación con logica dinámica dependiendo del usuario -->
     <nav class="navbar navbar-expand-md navbar-dark navegacion">
         <div class="container-fluid">
-            <!-- BOTON HAMBURGUESA PARA RESPONSIVIDAD -->
             <button class="navbar-toggler mx-auto mb-2" type="button" data-bs-toggle="collapse"
                 data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse justify-content-center" id="menuPrincipal">
                 <div class="navbar-nav gap-2 gap-md-4">
                     <a class="nav-link d-inline-flex align-items-center justify-content-center gap-1"
                         href="#inicio"><span class="material-symbols-outlined">home</span>Inicio</a>
                     <a class="nav-link d-inline-flex align-items-center justify-content-center gap-1"
-                        href="#estrategia"><span class="material-symbols-outlined">strategy</span>Estrategia</a>
-                    <a class="nav-link d-inline-flex align-items-center justify-content-center gap-1"
-                        href="#familiar"><span class="material-symbols-outlined">groups</span>Familiar</a>
-                    <a class="nav-link d-inline-flex align-items-center justify-content-center gap-1"
-                        href="#cartas"><span class="material-symbols-outlined">playing_cards</span>Cartas</a>
-                    <a class="nav-link d-inline-flex align-items-center justify-content-center gap-1"
-                        href="#fiesta"><span class="material-symbols-outlined">celebration</span>Fiesta</a>
-                    <a class="nav-link d-inline-flex align-items-center justify-content-center gap-1"
-                        href="#registro"><span class="material-symbols-outlined">person_add</span>Registro</a>
+                        href="#indice-categorias"><span class="material-symbols-outlined">category</span>Categorías</a>
+
+                    <!-- Elementos que se van mostrando dependiendo de la sesion y el rol -->
+                    <a id="navCarrito" class="nav-link d-inline-flex align-items-center justify-content-center gap-1"
+                        href="carro/carro.html"><span class="material-symbols-outlined">shopping_cart</span>Carrito</a>
+                    <a id="navRegistro" class="nav-link d-inline-flex align-items-center justify-content-center gap-1"
+                        href="registro/registro.html"><span
+                            class="material-symbols-outlined">person_add</span>Registro</a>
+                    <a id="navLogin" class="nav-link d-inline-flex align-items-center justify-content-center gap-1"
+                        href="login/login.html"><span class="material-symbols-outlined">login</span>Iniciar Sesión</a>
+                    <a id="navPerfil"
+                        class="nav-link d-inline-flex align-items-center justify-content-center gap-1 d-none"
+                        href="#"><span class="material-symbols-outlined">person</span>Mi
+                        Perfil</a>
+                    <a id="navCerrarSesion"
+                        class="nav-link d-inline-flex align-items-center justify-content-center gap-1 d-none"
+                        href="#"><span class="material-symbols-outlined">logout</span>Cerrar Sesión</a>
                 </div>
             </div>
         </div>
     </nav>
+
     <main>
-        <!-- INDICE DE CATEGORIAS -->
+        <!-- Indice de categorias (estatico) -->
         <section class="seccion seccion-alterna" id="indice-categorias">
-            <div class="contenedor">
+            <div class="container">
                 <div class="seccion-header justify-content-center">
                     <h2>Nuestras Categorías</h2>
                 </div>
+                <!-- Tarjetas de categorias -->
                 <div class="row g-4 mt-2">
-                    <!-- Categoría Estrategia -->
                     <div class="col-12 col-sm-6 col-lg-3">
                         <a href="#estrategia" class="enlace-categoria">
                             <article class="tarjeta tarjeta-categoria">
-                                <img src="img/cat_estrategia.png" alt="CatEstrategia">
+                                <img src="img/cat_estrategia.png" alt="Categoría Estrategia">
                                 <div class="tarjeta-contenido justify-content-center">
                                     <h3>Estrategia</h3>
                                 </div>
                             </article>
                         </a>
                     </div>
-                    <!-- Categoría Familiar -->
                     <div class="col-12 col-sm-6 col-lg-3">
                         <a href="#familiar" class="enlace-categoria">
                             <article class="tarjeta tarjeta-categoria">
@@ -82,7 +90,6 @@
                             </article>
                         </a>
                     </div>
-                    <!-- Categoría Cartas -->
                     <div class="col-12 col-sm-6 col-lg-3">
                         <a href="#cartas" class="enlace-categoria">
                             <article class="tarjeta tarjeta-categoria">
@@ -93,7 +100,6 @@
                             </article>
                         </a>
                     </div>
-                    <!-- Categoría Fiesta -->
                     <div class="col-12 col-sm-6 col-lg-3">
                         <a href="#fiesta" class="enlace-categoria">
                             <article class="tarjeta tarjeta-categoria">
@@ -107,311 +113,20 @@
                 </div>
             </div>
         </section>
-        <!-- PRIMERA CATEGORIA -->
-        <section class="seccion" id="estrategia">
-            <div class="contenedor">
-                <div class="seccion-header">
-                    <h2><span class="material-symbols-outlined">strategy</span>Juegos de Estrategia</h2>
-                    <a href="#inicio" class="boton-secundario"><span class="material-symbols-outlined">home</span></a>
-                </div>
-                <div class="row g-4">
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <article class="tarjeta">
-                            <img src="img/catan.jpg" alt="Catan">
-                            <div class="tarjeta-contenido">
-                                <h3>Catán</h3>
-                                <p class="descripcion">
-                                    Construye rutas y poblados negociando recursos. Un clásico moderno de la estrategia.
-                                </p>
-                                <div class="precio-contenedor">
-                                    <p class="precio">$45.000</p>
-                                    <p class="descuento">¡10% de descuento aplicado!</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <article class="tarjeta">
-                            <img src="img/scythe.jpg" alt="Scythe">
-                            <div class="tarjeta-contenido">
-                                <h3>Scythe</h3>
-                                <p class="descripcion">
-                                    Estrategia 4X en una Europa alternativa post-Primera Guerra Mundial.
-                                </p>
-                                <div class="precio-contenedor">
-                                    <p class="precio">$85.000</p>
-                                    <p class="descuento">¡Envío Gratis y 5% Dcto!</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <article class="tarjeta">
-                            <img src="img/terraforming-mars.jpg" alt="Terraforming Mars">
-                            <div class="tarjeta-contenido">
-                                <h3>Terraforming Mars</h3>
-                                <p class="descripcion">
-                                    Dirige una corporación para hacer habitable el planeta rojo. Complejo e inmersivo.
-                                </p>
-                                <div class="precio-contenedor">
-                                    <p class="precio">$65.000</p>
-                                    <p class="sin-descuento">Precio normal.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEGUNDA CATEGORIA -->
-        <section class="seccion seccion-alterna" id="familiar">
-            <div class="contenedor">
-                <div class="seccion-header">
-                    <h2><span class="material-symbols-outlined">groups</span>Juegos Familiares</h2>
-                    <a href="#inicio" class="boton-secundario"><span class="material-symbols-outlined">home</span></a>
-                </div>
-                <div class="row g-4">
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <article class="tarjeta">
-                            <img src="img/carcassonne.jpg" alt="Carcassonne">
-                            <div class="tarjeta-contenido">
-                                <h3>Carcassonne</h3>
-                                <p class="descripcion">Crea un mapa medieval colocando losetas y tus seguidores.
-                                    Elegante y
-                                    sencillo.</p>
-                                <div class="precio-contenedor">
-                                    <p class="precio">$35.000</p>
-                                    <p class="sin-descuento">Precio normal.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <article class="tarjeta">
-                            <img src="img/aventureros.jpg" alt="Aventureros al Tren">
-                            <div class="tarjeta-contenido">
-                                <h3>Aventureros al Tren</h3>
-                                <p class="descripcion">Conecta ciudades norteamericanas con tus rutas de trenes.
-                                    Diversión
-                                    para todos.</p>
-                                <div class="precio-contenedor">
-                                    <p class="precio">$50.000</p>
-                                    <p class="descuento">¡15% de descuento por esta semana!</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <article class="tarjeta">
-                            <img src="img/dixit.jpg" alt="Dixit">
-                            <div class="tarjeta-contenido">
-                                <h3>Dixit</h3>
-                                <p class="descripcion">Un juego de deducción y creatividad donde una imagen vale mil
-                                    palabras.</p>
-                                <div class="precio-contenedor">
-                                    <p class="precio">$38.000</p>
-                                    <p class="sin-descuento">Precio normal.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TERCERA CATEGORIA -->
-        <section class="seccion" id="cartas">
-            <div class="contenedor">
-                <div class="seccion-header">
-                    <h2><span class="material-symbols-outlined">playing_cards</span>Juegos de Cartas</h2>
-                    <a href="#inicio" class="boton-secundario"><span class="material-symbols-outlined">home</span></a>
-                </div>
-                <div class="row g-4">
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <article class="tarjeta">
-                            <img src="img/exploding.jpeg" alt="Exploding Kittens">
-                            <div class="tarjeta-contenido">
-                                <h3>Exploding Kittens</h3>
-                                <p class="descripcion">Una versión gatuna de la ruleta rusa. Roba cartas hasta que
-                                    alguien
-                                    explote.</p>
-                                <div class="precio-contenedor">
-                                    <p class="precio">$20.000</p>
-                                    <p class="descuento">¡20% Dcto en segunda unidad!</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <article class="tarjeta">
-                            <img src="img/virus.jpg" alt="Virus">
-                            <div class="tarjeta-contenido">
-                                <h3>Virus!</h3>
-                                <p class="descripcion">Contagia los órganos de tus rivales y protege los tuyos en este
-                                    rápido juego.</p>
-                                <div class="precio-contenedor">
-                                    <p class="precio">$15.000</p>
-                                    <p class="sin-descuento">Precio normal.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <article class="tarjeta">
-                            <img src="img/sushi-go.jpg" alt="Sushi Go">
-                            <div class="tarjeta-contenido">
-                                <h3>Sushi Go!</h3>
-                                <p class="descripcion">Pasa y escoge cartas para crear el mejor menú de sushi. Rápido y
-                                    divertido.</p>
-                                <div class="precio-contenedor">
-                                    <p class="precio">$18.000</p>
-                                    <p class="sin-descuento">Precio normal.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CUARTA CATEGORIA -->
-        <section class="seccion seccion-alterna" id="fiesta">
-            <div class="contenedor">
-                <div class="seccion-header">
-                    <h2><span class="material-symbols-outlined">celebration</span>Juegos de Fiesta</h2>
-                    <a href="#inicio" class="boton-secundario"><span class="material-symbols-outlined">home</span></a>
-                </div>
-                <div class="row g-4">
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <article class="tarjeta">
-                            <img src="img/codigo-secreto.jpg" alt="Codigo Secreto">
-                            <div class="tarjeta-contenido">
-                                <h3>Código Secreto</h3>
-                                <p class="descripcion">Dos equipos compiten para encontrar a todos sus agentes usando
-                                    pistas.</p>
-                                <div class="precio-contenedor">
-                                    <p class="precio">$25.000</p>
-                                    <p class="descuento">¡Promoción Flash: 10% Dcto!</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <article class="tarjeta">
-                            <img src="img/just-one.jpg" alt="Just One">
-                            <div class="tarjeta-contenido">
-                                <h3>Just One</h3>
-                                <p class="descripcion">Juego cooperativo donde debes escribir una pista para adivinar la
-                                    palabra secreta.</p>
-                                <div class="precio-contenedor">
-                                    <p class="precio">$22.000</p>
-                                    <p class="sin-descuento">Precio normal.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <article class="tarjeta">
-                            <img src="img/dobble.jpg" alt="Dobble">
-                            <div class="tarjeta-contenido">
-                                <h3>Dobble</h3>
-                                <p class="descripcion">Pon a prueba tus reflejos visuales encontrando el símbolo
-                                    idéntico.
-                                </p>
-                                <div class="precio-contenedor">
-                                    <p class="precio">$15.000</p>
-                                    <p class="sin-descuento">Precio normal.</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- QUINTA SECCIÓN: REGISTRO -->
-        <section class="seccion" id="registro">
-            <div class="contenedor">
-                <div class="seccion-header">
-                    <h2><span class="material-symbols-outlined fs-2">person_add</span>Únete a SEV Toys</h2>
-                    <a href="#inicio" class="boton-secundario"><span class="material-symbols-outlined">home</span></a>
-                </div>
-
-                <div class="registro-contenedor mx-auto" style="max-width: 800px;">
-                    <p class="text-center mb-4">Regístrate para obtener recompensas y guardar el registro de tus juegos
-                        favoritos.</p>
-
-                    <form id="formRegistro" novalidate>
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="nombre" class="form-label">Nombre Completo *</label>
-                                <input type="text" class="form-control" id="nombre" required>
-                                <div class="invalid-feedback">El nombre es obligatorio.</div>
-                            </div>
-                            <div class="col-md-6 mt-3 mt-md-0">
-                                <label for="usuario" class="form-label">Nombre de Usuario *</label>
-                                <input type="text" class="form-control" id="usuario" required>
-                                <div class="invalid-feedback">El usuario es obligatorio.</div>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo Electrónico *</label>
-                            <input type="email" class="form-control" id="email" required>
-                            <div class="invalid-feedback">Ingresa un correo electrónico válido.</div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="password" class="form-label">Contraseña *</label>
-                                <input type="password" class="form-control" id="password" required>
-                                <div class="invalid-feedback" id="passwordError">
-                                    Debe tener entre 6 y 18 caracteres, una mayúscula y un número.
-                                </div>
-                            </div>
-                            <div class="col-md-6 mt-3 mt-md-0">
-                                <label for="confirmPassword" class="form-label">Repetir Contraseña *</label>
-                                <input type="password" class="form-control" id="confirmPassword" required>
-                                <div class="invalid-feedback">Las contraseñas no coinciden.</div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-4">
-                            <div class="col-md-6">
-                                <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento *</label>
-                                <input type="date" class="form-control" id="fechaNacimiento" required>
-                                <div class="invalid-feedback" id="edadError">Debes tener al menos 13 años para
-                                    registrarte.</div>
-                            </div>
-                            <div class="col-md-6 mt-3 mt-md-0">
-                                <label for="direccion" class="form-label">Dirección de Despacho (Opcional)</label>
-                                <input type="text" class="form-control" id="direccion">
-                            </div>
-                        </div>
-
-                        <div id="mensajeExito" class="alert alert-success d-none" role="alert">
-                            ¡Registro exitoso! Bienvenido a SEV Toys.
-                        </div>
-
-                        <div class="d-flex justify-content-center gap-3">
-                            <button type="submit" class="btn-enviar">Registrarse</button>
-                            <button type="reset" class="btn-limpiar" id="btnLimpiar">Limpiar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
+        <!-- CATEGORIAS DE JUEGOS (DINÁMICO a traves de main.js) -->
+        <div id="seccionesCategorias"></div>
     </main>
 
     <!-- FOOTER -->
-    <footer class="pie-pagina">
+    <footer class="pie-pagina text-center p-4">
         <p>© 2026 FullStack 2</p>
     </footer>
 
+    <!-- Scripts de Bootstrap y logica propia -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
-    
+    <script src="js/controlSesion.js"></script>
+
 </body>
 
 </html>

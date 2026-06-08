@@ -1,5 +1,18 @@
 ### BITACORA DE CAMBIOS
 
+### SEMANA 3: Actividad Sumativa 1 
+## Mejora en Gestión de Sesiones y Persistencia de Datos
+
+- Seguridad: Implementación de lógica de validación basada en el arreglo persistente de usuarios, eliminando dependencias de objetos hardcoded para el administrador.
+
+- Gestión de Perfil: Persistencia de datos (dirección y contraseñas) mediante la sincronización bidireccional entre la sesión activa y el registro global.
+
+- Control de Acceso: Refinamiento de la interfaz del catálogo y menú de navegación. Ocultado dinámicamente el carrito y botón de compra para el rol de administrador maestro (admin@sev.cl).
+
+- UX: Implementacion de validación de stock en tiempo real que oculta el botón de compra en productos agotados.
+
+- Nuevos componentes: Login, Registro, Carro de compras, Perfil (Cliente y Admin), Recuperación de contraseña
+
 ### SEMANA 2: Interactividad, Bootstrap y Validaciones
 
 - Framework CSS: Integración de Bootstrap 5 mediante CDN para mejorar la responsividad estructural del sitio. Se reemplazó la grilla manual de CSS por el sistema de grillas de Bootstrap (row, col-*).

@@ -1,9 +1,11 @@
 /* ========================================================= */
 /* VARIABLES */
+/* Centraliza colores, tipografias y medidas para facilitar cambios globales */
 /* ========================================================= */
 :root {
     --color-principal: #2c3e50;
-    --color-secundario: #e74c3c;
+    --color-secundario: #16526e;
+    --color-secundario-hover: #187969;
     --color-fondo: #ecf0f1;
     --color-texto: #333333;
     --color-blanco: #ffffff;
@@ -11,6 +13,8 @@
     --color-exito: #27ae60;
     --color-alerta: #c0392b;
     --color-sombra: #CFC1BE;
+    --color-descripcion: #666;
+    --color-sin-descuento: #999;
 
     --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
@@ -141,6 +145,10 @@ img {
     margin-bottom: var(--espaciado-medio);
 }
 
+.subtitulo {
+    font-size: 0.9rem !important;
+}
+
 /* ========================================================= */
 /* BOTONES */
 /* ========================================================= */
@@ -192,7 +200,7 @@ img {
 }
 
 /* ========================================================= */
-/* SECCIONES GENERALES */
+/* SECCIONES */
 /* ========================================================= */
 .seccion {
     padding: var(--espaciado-grande) 0;
@@ -297,7 +305,7 @@ a.enlace-categoria {
 }
 
 .descripcion {
-    color: #666;
+    color: var(--color-descripcion);
     flex-grow: 1;
 }
 
@@ -322,10 +330,31 @@ a.enlace-categoria {
 }
 
 .sin-descuento {
-    color: #999;
+    color: var(--color-sin-descuento);
     font-style: italic;
     font-size: 0.9rem;
     margin: 0;
+}
+
+/* ========================================================= */
+/* TABLAS */
+/* ========================================================= */
+.tabla-admin thead th,
+.tabla-carrito thead th,
+.tabla-usuarios thead th {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 12px;
+}
+
+.tabla-admin,
+.tabla-usuarios,
+.tabla-carrito {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 /* ========================================================= */
@@ -349,7 +378,7 @@ a.enlace-categoria {
 }
 
 .btn-enviar:hover {
-    background-color: #c0392b;
+    background-color: var(--color-secundario-hover);
     transform: translateY(-2px);
 }
 
@@ -369,6 +398,11 @@ a.enlace-categoria {
     text-align: center;
     padding: var(--espaciado-medio);
     margin-top: var(--espaciado-grande);
+}
+
+.scroll-lista {
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 /* ========================================================= */
